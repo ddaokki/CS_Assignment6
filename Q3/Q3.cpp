@@ -53,18 +53,24 @@ void transformViewport(vec3& p) {
 }
 
 vec3 computeLighting(const vec3& pos, const vec3& normal) {
-    vec3 ambient = Ia * ka;
     vec3 L = normalize(lightPos - pos);
-    vec3 V = normalize(-pos);
+    vec3 V = normalize(-pos); // 카메라는 원점
     vec3 R = reflect(-L, normal);
+
+    vec3 ambient = Ia * ka;
     float diff = std::max(dot(normal, L), 0.0f);
     vec3 diffuse = diff * kd * lightColor;
+
     float spec = pow(std::max(dot(R, V), 0.0f), p);
     vec3 specular = spec * ks * lightColor;
+
     vec3 color = ambient + diffuse + specular;
-    color = pow(color, vec3(1.0f / 2.2f));
-    return clamp(color, 0.0f, 1.0f);
+    color = clamp(color, 0.0f, 1.0f);              // 먼저 clamp
+    color = pow(color, vec3(1.0f / 2.2f));         // 이후 감마 보정
+
+    return color;
 }
+
 
 void setPixel(int x, int y, const vec3& color) {
     if (x >= 0 && x < width && y >= 0 && y < height) {
@@ -118,7 +124,7 @@ void rasterize(const vector<vec3>& screenVerts, const vector<vec3>& worldVerts, 
 }
 
 void createSphere() {
-    int w = 20, h = 10;
+    int w = 24, h = 12;
     for (int j = 1; j < h - 1; ++j) {
         float theta = (float)j / (h - 1) * M_PI;
         for (int i = 0; i < w; ++i) {
