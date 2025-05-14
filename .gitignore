@@ -1,0 +1,58 @@
+# ───── Prerequisites ─────
+*.d
+
+# ───── Compiled Object Files ─────
+*.slo
+*.lo
+*.o
+*.obj
+
+# ───── Precompiled Headers ─────
+*.gch
+*.pch
+
+# ───── Compiled Dynamic Libraries ─────
+*.so
+*.dylib
+*.dll
+
+# ───── Compiled Static Libraries ─────
+*.lai
+*.la
+*.a
+*.lib
+
+# ───── Executables ─────
+*.exe
+*.out
+*.app
+
+# ───── Visual Studio Build Files ─────
+*.pdb
+*.ilk
+*.log
+*.sdf
+*.ipch
+*.vcxproj.user
+
+# ───── Build Directories ─────
+Debug/
+Release/
+x64/
+build/
+
+# ───── IDE Configurations ─────
+.vs/
+.vscode/
+
+# ───── Keep external libraries and headers ─────
+!lib/
+!lib/**/*.lib
+!lib/**/*.dll
+!include/
+!include/**
+
+# ───── Keep runtime DLLs ─────
+!bin/
+!bin/**/*.dll
+!bin/**/*.exe
