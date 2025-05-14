@@ -1,3 +1,6 @@
+
+#I acknowledge that this is a late submission.
+
 # 💡 Computer Graphics HW6: Shading with Custom Rasterizer
 
 A C++ project that implements a software rasterizer with flat, Gouraud, and Phong shading. 
@@ -91,8 +94,3 @@ Each shading stage handles lighting, gamma correction, and depth comparison with
 ```
 
 ---
-
-## 🙋‍♂️ Author
-
-- Assignment for CG course @YourUniversity
-- Submitted by: [Your Name / Student ID]
