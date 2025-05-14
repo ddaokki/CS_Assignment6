@@ -1,5 +1,4 @@
-
-#I acknowledge that this is a late submission.
+# I acknowledge that this is a late submission.
 
 # 💡 Computer Graphics HW6: Shading with Custom Rasterizer
 
